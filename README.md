@@ -7,6 +7,7 @@ Group Members: Yue Wu, Zayna Chanel
 
 ## Repository Index
 - [French_difficulty_original.ipynb](/French_difficulty_original.ipynb): The python notebook for the model training with original data
+- [improved_model.ipynb](/improved_model.ipynb): The python notebook for the improved model training 
 - [Image](/Image): The folder of essential images in the notebook
 - [streamlit](/streamlit): The folder of essential images in the notebook
 - [data_augmentation.ipynb](/data_augmentation.ipynb): The code for data augmentation
@@ -97,6 +98,17 @@ Together with back translation method, we have the following results:
 
 ![accuracy_table_2](Image/accuracy_table_2.png)
 
+After introducing back translation as a data augmentation technique, we observed significant improvements in model performance. MLP (Multi-Layer Perceptron) demonstrated the most substantial improvement, with its accuracy reaching 0.808333 and F1-score at 0.806984, marking it as the top performer. These enhancements suggest that the augmented dataset, enriched with varied linguistic expressions via back translation, provides a more robust training foundation, improving generalization capabilities of the models.
+While the back translation augmentation led to improvements in model accuracy, the confusion matrix for the ExtraTree classifier revealed that some misclassifications between non-adjacent levels still persist. 
+
 ![CM_ETC_2](Image/CM_ETC_2.png)
 
-Then we use the whole dataset to retrain the model and use the retrained model to predict the difficulty level in the unlabelled test dataset.
+Then we use the whole dataset to retrain the model and use the retrained model to predict the difficulty level in the unlabelled test dataset. And save the trained model and scaler for UI.
+
+In our latest model development, we employed an ensemble approach using both the BERT (BertForSequenceClassification) and CamemBERT (CamembertForSequenceClassification) models, leveraging their strengths to enhance the accuracy of predicting sentence difficulty in multiple languages.
+BERT is a multilingual model capable of understanding multiple languages, which is particularly useful for datasets involving diverse linguistic content.
+CamemBERT is a model trained specifically on French language text, optimized for understanding nuances in French.
+After training, we predicted the difficulty levels using both models on their respective test datasets.
+We ensemble the predictions by averaging both models. This approach leverages the predictive power of both models, smoothing out any overconfidence in single model predictions. As a result, we improved the final test prediction accuracy above 0.6!
+
+![result](Image/result.png)
