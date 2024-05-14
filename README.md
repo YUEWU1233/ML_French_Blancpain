@@ -49,23 +49,54 @@ _F1-Score_: Harmonic mean of precision and recall, providing a single metric tha
 We tested a variety of machine learning models to find the best performer for our  task. The models evaluated include **Logistic Regression, K-Nearest Neighbors, Decision Tree, Random Forest, Extra Trees, Support Vector Machine,** and several **boosting algorithms (XGBoost, LightGBM, CatBoost)**, as well as a **Multi-Layer Perceptron (MLP)**. 
 
 To enhance the performance of our RandomForest and ExtraTrees classifiers, we employed GridSearchCV from sklearn.model_selection as hyper-parameter optimization to find the best solution. This tool allows us to systematically explore multiple combinations of parameter tunes, and determine which parameters yield the best model performance.
+
 ![hyper-parameter](Image/hypertext_original.png)
 
 In our evaluation of various machine learning models, the Support Vector Machine (SVM) exhibited the highest overall accuracy and F1-score, highlighting its superior performance for our text difficulty prediction task. This model effectively managed to balance precision and recall, making it highly suitable for our application.
 
-Here's a quick summary of how the SVM stands out and some notes on other notable models:
-
 Support Vector Machine (SVM): SVM achieved the highest F1-score among all the models tested, demonstrating its efficacy in handling the complex patterns in our feature data derived from the CamemBERT model. Its robust performance in both precision and recall makes it particularly valuable for predicting sentence difficulty where maintaining a balance between false positives and false negatives is crucial.
-
-Boosting Algorithms: While models like XGBoost and LightGBM also showed competitive performances, they did not surpass the SVM in terms of overall metrics. However, their ability to adaptively enhance their performance through iterations still makes them strong contenders for further tuning.
-
-CatBoost: Despite earlier claims, while CatBoost performed well, especially in terms of F1-score, it did not achieve the highest score across all metrics. This indicates a strong performance but suggests there may be room for optimization or it may be more suited to specific types of classification tasks within our dataset.
 
 Random Forest (improved): This model showed a marked improvement over the basic Random Forest, indicating that enhancements such as parameter tuning can significantly boost performance.
 
 ![Accuracy_table](/Image/accuracy_table_original.png)
 
+The confusion matrix provides a visual representation of the performance of the Support Vector Machine (SVM) model, particularly how well the model classifies sentences across different difficulty levels.
+
+The x-axis represents the predicted labels by the model.
+The y-axis represents the true labels, i.e., the actual difficulty levels.
+Each cell in the matrix shows the count of predictions made by the model, where the predicted difficulty level corresponds to the column, and the true difficulty level corresponds to the row.
+Diagonal Cells (True Positives): The cells on the diagonal from the top-left to the bottom-right represent correct predictions where the predicted labels match the true labels. High numbers in these cells indicate better performance for specific difficulty levels.
+Off-Diagonal Cells (Misclassifications): Cells above the diagonal show where the model has predicted a difficulty level that is higher than the true level. Cells below the diagonal show where the model has predicted a difficulty level that is lower than the true level.
+This matrix indicates that while the SVM performs well in classifying sentences into correct difficulty levels, especially for mid and higher levels (B1, B2, C1, C2), there are areas of improvement needed for distinguishing between the closest difficulty levels, particularly among the lower levels (A1, A2).
 
 ![Confusion Matrix](/Image/CM_SVC_original.png)
+
+To further understand the performance of each classification model, we analyze specific instances where models failed to predict the correct labels. This insight allows us to identify common patterns of errors and may inform future improvements in model training or feature engineering.
+
+We notice that certain indices are consistently misclassified across multiple models, which typically suggests challenges such as inherent complexity or ambiguity in the sentences, insufficient feature representation, or fundamental limitations of the models themselves.
+
+![Error Case](/Image/error_original.png)
+
+## 1.3 Data Augmentation
+To enhance the diversity and volume of our training data, we employed two primary data augmentation techniques: back translation and NLP-based augmentation. These methods help improve the models' ability to generalize across various sentence structures and expressions.
+
+**Back Translation**
+Back translation involves translating a sentence from the original language (in this case, French) to a second language (in our case, English) and then translating it back to the original language. This process often introduces subtle variations in phrasing and word choice, effectively creating new sentence variants while maintaining the original meaning. This technique is particularly useful for: 
+Enriching the dataset with varied syntactic structures.
+Enhancing model robustness against slight linguistic variations.
+
+**NLP-Based Augmentation**
+NLP-based augmentation leverages natural language processing techniques to modify sentences in ways that preserve their original semantic content. Methods include:
+
+Synonym Replacement: Substituting words with their synonyms while keeping the sentence's context intact.
+Random Insertion: Adding words at random positions within the sentence to increase sentence complexity and variability.
+Random Deletion: Removing random words from the sentence, forcing the model to focus on less obvious features of the text.
+Sentence Shuffling: Rearranging the order of words or phrases in the sentence without altering the overall meaning.
+
+Together with back translation method, we have the following results:
+
+![accuracy_table_2](Image/accuracy_table_2.png)
+
+![CM_ETC_2](Image/CM_ETC_2.png)
 
 Then we use the whole dataset to retrain the model and use the retrained model to predict the difficulty level in the unlabelled test dataset.
