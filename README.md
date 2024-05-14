@@ -25,11 +25,7 @@ We implemented the text feature extraction process through a function named bert
 ## 1.2 Classification
 Firstly, we devide our dataset for model training and evaluation into training and validation sets at a 90% and 10% ratio. 
 Then we use different classification model to train our scaled extracted features, and evaluate their accuracy.
+![Accuracy_table](/Image/accuracy_table_original.png)
 
-###1.2.1 Accuracy results
-
-###1.2.2 Confusion Matrix
-
-###1.2.3 
 
 ![Confusion Matrix](/Image/CM_SVC_original.png)
