@@ -17,7 +17,7 @@ Group Members: Yue Wu, Zayna Chanel
 - [sample_submission.csv](/sample_submission.csv): The sample submission (provided by Kaggle)
 - [README.md](/README.md): The README document
 
-#1.Model preparation
+# 1.Model preparation
 ## 1.1 Tokenization and Feature extraction
 We chose to use the Bidirectional Encoder Representations from Transformers (Bert), a state-of-the-art pre-trained language model based on the Transformer architecture. Bert is highly regarded for its deep understanding of language context and its ability to perform various natural language processing (NLP) tasks. It learns language representations on a large-scale text corpus. Its strengths include powerful pre-trained language capabilities, bi-directional encoding, and transfer learning potential, which make it ideal for extracting textual features.
 We implemented the text feature extraction process through a function named bert_feature(data, **kwargs). This function is designed to process a list of text data, performing tokenization and encoding to transform texts into a format suitable for the Bert model. 
