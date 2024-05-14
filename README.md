@@ -8,6 +8,7 @@ Group Members: Yue Wu, Zayna Chanel
 ## Repository Index
 - [French_difficulty_original.ipynb](/French_difficulty_original.ipynb): The python notebook for the model training with original data
 - [Image](/Image): The folder of essential images in the notebook
+- [streamlit](/streamlit): The folder of essential images in the notebook
 - [UI_French.py](/UI_French.py): The streamlit UI 
 - [data_augmentation.ipynb](/data_augmentation.ipynb): The code for data augmentation
 - [back_translation.csv](/back_translation.csv): The augmented data using back translation
