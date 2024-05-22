@@ -111,7 +111,7 @@ CamemBERT is a model trained specifically on French language text, optimized for
 After training, we predicted the difficulty levels using both models on their respective test datasets.
 We ensemble the predictions by averaging both models. This approach leverages the predictive power of both models, smoothing out any overconfidence in single model predictions. As a result, we improved the final test prediction accuracy above 0.6!
 
-![result](Image/result.png)
+![result](Image/result_final.png)
 
 
 Yue Wu: coding ([French_difficulty_original.ipynb](/French_difficulty_original.ipynb)), submission, confusion matrix, classifer comparison, hyper-parameter, error analysis, streamlit UI, github and README, and the video manuscript content
