@@ -2,7 +2,7 @@
 Group Members: Yue Wu, Zayna Chanel
 
 ## Video
- **[Check our video here]((https://youtu.be/ZaAc7edc38Q))**
+ **[Check our video here](https://youtu.be/ZaAc7edc38Q)**
 
 
 ## Repository Index
