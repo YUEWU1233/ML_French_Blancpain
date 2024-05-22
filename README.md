@@ -112,3 +112,6 @@ After training, we predicted the difficulty levels using both models on their re
 We ensemble the predictions by averaging both models. This approach leverages the predictive power of both models, smoothing out any overconfidence in single model predictions. As a result, we improved the final test prediction accuracy above 0.6!
 
 ![result](Image/result.png)
+
+Yue Wu: coding ([French_difficulty_original.ipynb](/French_difficulty_original.ipynb)), submission, confusion matrix, classifer comparison, hyper-parameter, error analysis, streamlit UI, github and README, and the video manuscript content
+Zayna Chanel: coding ([improved_model.ipynb](/improved_model.ipynb)),submission, confusion matrix, model comparison and video
