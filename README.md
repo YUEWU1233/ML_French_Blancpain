@@ -115,4 +115,5 @@ We ensemble the predictions by averaging both models. This approach leverages th
 
 
 Yue Wu: coding ([French_difficulty_original.ipynb](/French_difficulty_original.ipynb)), submission, confusion matrix, classifer comparison, hyper-parameter, error analysis, streamlit UI, github and README, and the video manuscript content
+
 Zayna Chanel: coding ([improved_model.ipynb](/improved_model.ipynb)),submission, confusion matrix, model comparison and video
