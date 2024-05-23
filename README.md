@@ -114,6 +114,6 @@ We ensemble the predictions by averaging both models. This approach leverages th
 ![result](Image/result_final.png)
 
 
-Yue Wu: coding, submission, confusion matrix, classifer comparison, hyper-parameter, error analysis, streamlit UI, github and README, and the video manuscript content
+Yue Wu: coding, streamlit UI, github and README, and the video manuscript content
 
-Zayna Chanel: coding, submission, confusion matrix, model comparison the video manuscript content and video editting
+Zayna Chanel: coding, the video manuscript content and video editting
