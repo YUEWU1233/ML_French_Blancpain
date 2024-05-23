@@ -114,8 +114,3 @@ We ensemble the predictions by averaging both models. This approach leverages th
 ![result](Image/result_final.png)
 
 
-Yue Wu: coding, streamlit UI, github and README, and the video manuscript content
-
-Zayna Chanel: coding, the highest score, the video manuscript content and video editting
-
-Project done by both Yue Wu and Zayna Chanel equally， as we all agreed
